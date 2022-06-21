@@ -1,0 +1,34 @@
+<div class="main">
+  <h3 class="title">{{ title }}</h3>
+  <div class="time">{{ value }}</div>
+  <div class="buttons">
+    <button
+      [disabled]="!pause"
+      (click)="startCounter()"
+      class="{{ !pause ? 'disabled' : 'button' }}"
+    >
+      Start
+    </button>
+    <button
+      [disabled]="pause && !seconds"
+      (click)="pauseCounter()"
+      class="{{ pause && !seconds ? 'disabled' : 'button' }}"
+    >
+      Stop
+    </button>
+    <button
+      [disabled]="pause && !seconds"
+      (click)="resetCounter()"
+      class="{{ pause && !seconds ? 'disabled' : 'button' }}"
+    >
+      Reset
+    </button>
+    <button
+      [disabled]="pause"
+      (click)="waitCounter()"
+      class="{{ pause ? 'disabled' : 'button' }}"
+    >
+      Wait
+    </button>
+  </div>
+</div>
